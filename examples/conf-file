@@ -1,0 +1,10 @@
+{"Collist":["collector1", "other"],
+"Start":"2017.01",
+"End":"2017.01",
+"Lo":"stdout",
+"So":"stdout",
+"Do":"test",
+"Wc":4,
+"Fmtr":"id",
+"Srcas":"4847",
+"Destas":""}

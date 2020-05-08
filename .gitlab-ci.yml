@@ -1,0 +1,15 @@
+stages:
+  - build
+
+build:
+  stage: build
+  image: ${CI_REGISTRY}/idnic/kadabra-route-collector/go:1.14
+  before_script:
+    - echo -n $S3CFG | base64 -d > ~/.s3cfg
+    - chmod 644 ~/.s3cfg
+  script:
+    - make build
+    - VERSION=$CI_COMMIT_TAG make upload-binaries
+  only:
+    refs:
+    - tags
